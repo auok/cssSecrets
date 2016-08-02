@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:100px;
+		height:100px;
+		margin:100px auto;
+		padding:5px;
+		background: red;
+		border:10px solid rgba(0,0,0,0.5);
+		background-clip: padding-box;
+		/*
+			background-clip 属性规定背景的绘制区域:
+				border-box  : 背景被裁剪到边框盒 (默认属性 覆盖边框\内边距);
+				padding-box : 背景被裁剪到内边距框 ( 抛出 边距 );
+				content-box : 背景被裁剪到内边距框 ( 抛出 内边距\边框 );
+		*/
+	}
+</style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
