@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:100px;
+		height:100px;
+		margin:100px auto;
+		background:  linear-gradient(#fb3 50%, #58a 0) repeat-y;
+		background-size: 100% 30px;
+		/*
+			linear-gradient 第二个值的位置点如果＜第一个值点 默认就会从第一个值的点算起;
+		 */
+	}
+	.box1{
+		width:100px;
+		height:120px;
+		margin:100px auto;
+		background:  linear-gradient(#fb3 33.3%, #58a 0,#58a 66.6%,yellowgreen 0) ;
+		background-size: 100% 60px;
+		/*
+			linear-gradient 第二个值的位置点如果＜第一个值点 默认就会从第一个值的点算起;
+		 */
+	}
+
+	.box2{
+		width:100px;
+		height:120px;
+		margin:100px auto;
+		background:  linear-gradient(90deg,#fb3 33.3%, #58a 0,#58a 66.6%,yellowgreen 0) ;
+		background-size: 60px 100% ;
+	}
+	.box3{
+		width:100px;
+		height:120px;
+		margin:100px auto;
+		background:  linear-gradient(45deg,#fb3 25%, #58a 0,#58a 50%,#fb3 0,#fb3 75%,#58a 0) ;
+		background-size: 42px 42px;
+		/*
+			书上说的算勾股定理 
+			其实重要算的是 background-size 块的区域重复，当然其实这个可以调值测试;
+		 */
+	}
+	.box4{
+		width:100px;
+		height:120px;
+		margin:100px auto;
+		background:  repeating-linear-gradient(45deg,#fb3, #58a 30px);
+		/*
+			repeating-linear-gradient 是 linear-gradient 值的重复;
+		 */
+	}
+	.box5{
+		width:100px;
+		height:120px;
+		margin:100px auto;
+		background:  repeating-linear-gradient(30deg,
+			#fb3,#fb3 15px,
+			#58a 0,#58a 30px
+		);
+		/*
+			repeating-linear-gradient 重复两个值颜色平铺;
+		 */
+	}
+	.box6{
+		width:100px;
+		height:120px;
+		margin:100px auto;
+		background:  repeating-linear-gradient(30deg,
+			#fb3,#fb3 15px,
+			#58a 0,#58a 30px,
+		);
+		/*
+			repeating-linear-gradient 重复两个值颜色平铺;
+		 */
+	}
+</style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</body>
+</html>
