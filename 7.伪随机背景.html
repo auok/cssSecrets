@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		background:linear-gradient(90deg,#fb3 15%,#655 0,#655 40%,#ab4 0,#ab4 60%,hsl(20, 40%, 90%) 0);
+		background-size: 80px 100%;
+		/*
+		#fb3
+		#655
+		#ab4
+		hsl(20, 40%, 90%)
+		 */
+		/*
+			做一个网格;
+		 */
+	}
+	.box1{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		background: hsl(20, 40%, 90%);
+		background-image:
+		       linear-gradient(90deg,#fb3 10px,transparent 0),
+		       linear-gradient(90deg,#655 20px,transparent 0),
+		       linear-gradient(90deg,#ab4 20px,transparent 0);
+		background-size: 80px 100%,60px 100%,40px 100%;
+		/*
+		#fb3
+		#655
+		#ab4
+		hsl(20, 40%, 90%)
+		 */
+		/*
+			主要利用linear-gradient贴片三层颜色在用background-size不规则的重复三个位置叠加效果;
+		 */
+	}
+	.box2{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		background: hsl(20, 40%, 90%);
+		background-image:
+		       linear-gradient(90deg,#fb3 11px,transparent 0),
+		       linear-gradient(90deg,#655 21px,transparent 0),
+		       linear-gradient(90deg,#ab4 31px,transparent 0);
+		background-size: 81px 100%,63px 100%,43px 100%;
+		/*
+		#fb3
+		#655
+		#ab4
+		hsl(20, 40%, 90%)
+		 */
+		/*
+			主要利用linear-gradient贴片三层颜色在用background-size不规则的重复三个位置叠加效果;
+			利用数字的相对质数找到相对较大的平铺接缝相对完美;
+		 */
+	}
+	
+</style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		padding:1em;
+		border:10px solid transparent;
+		background:
+			    linear-gradient(#fff,#fff),url(stone-art.png);
+		background-size: cover;
+		background-clip: padding-box,border-box;
+		
+		/*
+			linear-gradient 渐变做一个白色到白色 background-clip 显示在从内边距内,
+			url引一张图片background-clip 只显示在边框里;
+			background-size: cover; cover 是有先后顺序的差别的;
+		 */
+	}
+	.box1{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		padding:1em;
+		border:10px solid transparent;
+		background:
+			    linear-gradient(#fff,#fff),url(stone-art.png);
+		background-clip: padding-box,border-box;
+		background-size: cover;
+		background-origin: border-box;
+		
+		/*
+			linear-gradient 渐变做一个白色到白色 background-clip 显示在从内边距内,
+			url引一张图片background-clip 只显示在边框里;
+			background-origin 让引用的图片开始的绘图位置为border得0 0点绘制;
+			就相当于用了一张背景图上边又渐变了一个白色背景覆盖在上边;
+		 */
+	}
+	.box2{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		padding:1em;
+		border:10px solid transparent;
+		background:
+			    linear-gradient(#fff,#fff) padding-box,url(stone-art.png) border-box 0 /cover;
+		
+		/*
+			linear-gradient 渐变做一个白色到白色 background-clip 显示在从内边距内,
+			url引一张图片background-clip 只显示在边框里;
+			background-origin 让引用的图片开始的绘图位置为border得0 0点绘制;
+			就相当于用了一张背景图上边又渐变了一个白色背景覆盖在上边;
+			0 0 其实是background-position 其实位置点(猜测,因为不写0不生效);
+		 */
+	}
+	.box3{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		padding:1em;
+		border:10px solid transparent;
+		background:
+				linear-gradient(#fff,#fff) padding-box,
+			    repeating-linear-gradient(-45deg,red 0,red 12.5%,transparent 0,transparent 25%,#58a 0,#58a 37.5%,transparent 0,transparent 50%) 0 0/5em 5em;
+		
+		/*	linear-gradient(#fff,#fff) padding-box,
+		red
+		transparent
+		#58a
+			linear-gradient 渐变做一个白色到白色 background-clip 显示在从内边距内,
+			url引一张图片background-clip 只显示在边框里;
+			background-origin 让引用的图片开始的绘图位置为border得0 0点绘制;
+			就相当于用了一张背景图上边又渐变了一个白色背景覆盖在上边;
+			0 0 其实是background-position 其实位置点(猜测,因为不写0不生效);
+		 */
+	}
+	.box4{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		padding:1em;
+		border:10px solid transparent;
+		border-image: 16 repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em) ;
+		
+		/*	
+			原理差不多 只不过用的border-image;
+
+		 */
+	}
+	@keyframes ants { to { background-position: 100% } }
+	.box5{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		padding:1em;
+		border:2px solid transparent;
+		background:
+				linear-gradient(#fff,#fff) padding-box,
+			    repeating-linear-gradient(-45deg,#fff,#fff 10%,black 0,black 35%,#fff 0,#fff 45%)  0 0/1em 1em;
+		animation: ants 12s linear infinite;
+		/*	
+			原理还是上边的
+			渐变一个白色的底色盖住
+			一个斜角度白黑白得大背景
+			在用animation 改变 background-position 得值;
+		 */
+	}
+
+	.box6{
+		width:200px;
+		height:200px;
+		margin:100px auto;
+		padding:1em;
+		color:#000;
+		border-top:2px solid transparent;
+		border-image: 100% 0 0
+			    linear-gradient(90deg,currentColor 50px,transparent 0);
+		
+		/*	
+			意义不大一个栗子;
+			也能用animation改变 linear-gradient里的值;
+		 */
+	}
+</style>
+</head>
+<body>
+    <div class="box">我只是文字</div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6">我不是很明白这个栗子</div>
+</body>
+</html>
