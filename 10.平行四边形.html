@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:150px;
+		height:30px;
+		margin:100px auto;
+		background: #fb3;
+		text-align: center;
+		transform: skew(-45deg);
+		/*
+			linear-gradient 渐变做一个白色到白色 background-clip 显示在从内边距内,
+			url引一张图片background-clip 只显示在边框里;
+			background-size: cover; cover 是有先后顺序的差别的;
+		 */
+	}
+	.box div{
+		height:30px;
+		line-height:30px;
+		transform: skew(45deg);
+	}
+	.box1{
+		position: relative;
+		width:150px;
+		height:30px;
+		line-height: 30px;
+		margin:100px auto;
+		text-align: center;
+	}
+	.box1::before{
+		position: absolute;
+		right:0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+		background: #fb3;
+		transform: skew(-45deg);
+		content: '';
+	}
+	/*
+		书里P59页的代码有点小瑕疵,
+		before 伪类里必须要有 content 否则不出来;
+		思路利用了伪类来skew变形;
+	 */
+</style>
+</head>
+<body>
+    <div class="box">
+		<div>
+			点我
+		</div>
+    </div>
+    <div class="box1">点我</div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</body>
+</html>

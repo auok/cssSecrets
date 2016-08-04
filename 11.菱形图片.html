@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:150px;
+		height:150px;
+		margin:100px auto;
+		background: #fb3;
+		text-align: center;
+		transform: rotate(45deg);
+		overflow: hidden;
+	}
+	.box img{
+		max-width: 100%;
+		transform: rotate(-45deg) scale(1.42);
+	}
+	/*
+		主体旋转,
+		内容体反向旋转,
+		理论上 img 宽设置为 主体旋转之后对角线的长度(勾股定理),
+		但 scale 缩放功能其实可以试,也可以用勾股定理算出来的比例设置;
+	 */
+</style>
+</head>
+<body>
+    <div class="box">
+		<img src="adamcatlace.jpg" alt="">
+    </div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</body>
+</html>
